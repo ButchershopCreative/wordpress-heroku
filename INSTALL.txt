@@ -1,0 +1,9 @@
+Running on http://bc-wordpress-ref.herokuapp.com
+
+To change the app URL on Heroku, must change WordPress options:
+
+$: git remote rm heroku
+$: git remote add heroku git@heroku.com:bc-wordpress-ref.git
+$: heroku pg:psql
+
+=> UPDATE wp_options SET option_value = 'http://bc-wordpress-ref.herokuapp.com' WHERE option_name = 'siteurl';
